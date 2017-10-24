@@ -1,0 +1,2 @@
+#!/bin/sh
+vegeta attack -rate=100 -duration=60s -targets=targets.txt > results.txt && vegeta report -inputs=results.txt -reporter=plot > results.html && vegeta report -inputs=results.txt -reporter=json | jq . && open -a "Google Chrome" results.html
